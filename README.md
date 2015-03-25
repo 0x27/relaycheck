@@ -51,6 +51,11 @@ If you want, send beermoniez to [13rZ67tmhi7M3nQ3w87uoNSHUUFmYx7f4V][bitcoin:13r
 ## Bugs
 Use the issue tracker. Github provides these things for a reason :)
 
+## Awful Kludges
+Ok, so I was not bothered with having some passwordprotected privkey handling so you need to add a key named .ssh/relay.key to the hosts authorized keys file. You can change this if 
+you want, but I strongly advice not using password auth on SSH for obvious reasons. Stick with privkeys, its safer there. I will eventually work out an elegant solution to cache the 
+privkey somehow after decrypting it with a password but cannot be bothered right now :)
+
 ## Contact
 If for some arbritary reason you want to contact me, see [my contact details and stuff][contact].
 
