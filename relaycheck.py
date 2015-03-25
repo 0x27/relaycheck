@@ -28,7 +28,7 @@ YELLOW = "\x1b[1;33m"
 # A global variable or two go here...
 DEFAULT_CONF_FILE = os.getenv("HOME")+"/.relaycheck.conf" # XXX: this is a filthy hack.
 PRIVKEY = os.getenv("HOME")+"/.ssh/relay.key" # XXX: No password support on privkeys yet.
-DEBUG = False
+DEBUG = False # if somethings going wierd just enable debug
 
 def msg_info(msg):
 	print "%s{i} %s%s" %(CYAN, msg, CLEAR)
@@ -49,7 +49,7 @@ def msg_debug(msg):
         pass
 
 def exec_cmd(host, port, user, command):
-	# execute a command, return outputz.
+	# execute a command, return outputz. Filthy, needs error handling.
     ssh = paramiko.SSHClient()
     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     privkey = paramiko.RSAKey.from_private_key_file(PRIVKEY)
