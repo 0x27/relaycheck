@@ -48,8 +48,14 @@ Licenced under the [WTFPL][wtfpl], the only truly free licence so do whatever th
 ## Beer?  
 If you want, send beermoniez to [13rZ67tmhi7M3nQ3w87uoNSHUUFmYx7f4V][bitcoin:13rZ67tmhi7M3nQ3w87uoNSHUUFmYx7f4V]
 
+## Bugs
+Use the issue tracker. Github provides these things for a reason :)
+
+## Contact
+If for some arbritary reason you want to contact me, see [my contact details and stuff][contact].
 
 [jsonlinter]: http://jsonformatter.curiousconcept.com/
 [asciinema]: https://asciinema.org/a/17999
 [wtfpl]: http://wtfpl.net
 [bitcoin:13rZ67tmhi7M3nQ3w87uoNSHUUFmYx7f4V]: bitcoin:13rZ67tmhi7M3nQ3w87uoNSHUUFmYx7f4V
+[contact]: http://0x27.me/about/
