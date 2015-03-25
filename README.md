@@ -3,7 +3,8 @@ Tool for checking the status and restarting my Tor relays
 
 ## What
 This is a simple tool I developed in the morning to deal with the fact that 50% of my tor relays have fallen over in the past week, so I can quickly check their health and restart them 
-periodically.
+periodically. I am not a devops wizard or anything, but do intend to make this all ansible-y at some arbritary undefined date in the future when I can be bothered doing so or 
+something.
 
 ## How to use
 Firstly, set up your configuration file, as seen below. Now, I am using the root user in my examples, but if you have a special user like a "tor" user for restarting/managing tor, use 
