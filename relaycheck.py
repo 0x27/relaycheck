@@ -3,7 +3,7 @@
 # relaytool: Check if relay is running, and restart relays.
 # written in response to my fucking tor relays falling over.
 # Author: Darren Martyn
-# Version: 20150325.1
+# Version: 20150326.1
 # BTC: 13rZ67tmhi7M3nQ3w87uoNSHUUFmYx7f4V
 # TODO: Port to Ansible once I figure out how2ansible
 # By default will use ~/.ssh/relay.key, un-passworded ssh key
@@ -104,9 +104,46 @@ def restart_relay(host, port, user):
     else:
         return False
 
+def start_relays(configuration):
+    for host in configuration['hosts']:
+        msg_status("Starting Tor on %s" %(host['relayname']))
+        success = start_relay(host=host['host'], port=host['port'], user=host['user'])
+        if success == True:
+            msg_success("Tor started successfully on %s" %(host['relayname']))
+        else:
+            msg_fail("Tor start failure on %s" %(host['relayname']))
+    # have some counter here later...
+        
+def start_relay(host, port, user):
+    try:
+        output = exec_cmd(host=host, port=port, user=user, command="service tor start && ps aux | grep tor")
+    except Exception, e:
+        msg_fail("Error in command execution. Printing stack trace and aborting...")
+        print e
+        sys.exit(0)
+    if "/usr/bin/tor" in output:
+        return True
+    else:
+        return False
+        
+def version_check_relays(configuration):
+    for host in configuration['hosts']:
+        msg_status("Checking Tor version on %s" %(host['relayname']))
+        version = version_check_relay(host=host['host'], port=host['port'], user=host['user'])
+        msg_info("Relay %s is running version %s" %(host['relayname'], version))
+        
+def version_check_relay(host, port, user):
+    try:
+        output = exec_cmd(host=host, port=port, user=user, command="tor --version")
+    except Exception, e:
+        msg_fail("Error in command execution. Printing stack trace and aborting...")
+        print e
+        sys.exit(0)
+    return output.strip()
+
 def main(args):
     if len(args) < 2:
-        sys.exit("use: %s <status | restart> (optional config file)" %(args[0]))
+        sys.exit("use: %s <status | restart | start | version> (optional config file)" %(args[0]))
     if len(args) > 2:
         msg_info("Using Configuration File: %s" %(args[2]))
         try:
@@ -127,6 +164,10 @@ def main(args):
         check_status_all(configuration=configuration)
     elif args[1] == "restart":
         restart_relays(configuration=configuration)
+    elif args[1] == "start":
+        start_relays(configuration=configuration)
+    elif args[1] == "version":
+        version_check_relays(configuration=configuration)
     else:
         msg_fail("WTF? RTFM!")
         sys.exit(0)
