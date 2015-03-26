@@ -3,15 +3,17 @@ Tool for checking the status and restarting my Tor relays
 
 ## What
 This is a simple tool I developed in the morning to deal with the fact that 50% of my tor relays have fallen over in the past week, so I can quickly check their health and restart them 
-periodically. I am not a devops wizard or anything, but do intend to make this all ansible-y at some arbritary undefined date in the future when I can be bothered doing so or 
+periodically, along with check which version they are running. I am not a devops wizard or anything, but do intend to make this all ansible-y at some arbritary undefined date in the 
+future when I can be bothered doing so or 
 something.
 
 ## How to use
 Firstly, set up your configuration file, as seen below. Now, I am using the root user in my examples, but if you have a special user like a "tor" user for restarting/managing tor, use 
 that user. You can either set the config file as a commandline argument, or have it stored in ~/.relaycheck.conf where it will be automatically loaded if none is specified :)
 
-There are only two possible commands at the moment. "status", which checks crudely if tor is running by issuing 'service tor status' command, and "restart" which kill -HUP's the tor 
-process in order to restart it, then checks the process list to ensure tor is still there and has not fucked off or anything. I have to make this more efficient later, but for some 
+There are only four possible commands at the moment. "status", which checks crudely if tor is running by issuing 'service tor status' command, and "restart" which kill -HUP's the tor 
+process in order to restart it, then checks the process list to ensure tor is still there and has not fucked off or anything. There is also "version", which checks the version of the 
+tor software on the relay, and "start" which starts the tor software if it has died. I have to make this more efficient later, but for some 
 reason restarting with "service tor restart" didn't like being scripted.
 
 ## JSON Configuration File  
@@ -61,6 +63,10 @@ Relies on python-paramiko, the rest should be standard python libs. Only written
 
 ## Contact
 If for some arbritary reason you want to contact me, see [my contact details and stuff][contact].
+
+## Changes
+26-03-2015: Added 'start' command to start tor relays if they are down.
+26-03-2015: Added 'version' command to check tor versions that are running.
 
 [jsonlinter]: http://jsonformatter.curiousconcept.com/
 [asciinema]: https://asciinema.org/a/17999
