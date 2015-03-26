@@ -65,6 +65,10 @@ Ok, so I was not bothered with having some passwordprotected privkey handling so
 you want, but I strongly advice not using password auth on SSH for obvious reasons. Stick with privkeys, its safer there. I will eventually work out an elegant solution to cache the 
 privkey somehow after decrypting it with a password but cannot be bothered right now :)
 
+## Roadmap
+Next features to add include better SSH key/pass handling (as per "Awful Kludges"), automatic logfile downloading/saving, and possibly integration with Stem to do useful stuff like 
+checking how much traffic has been passed through the relay, its speed, uptime, etc.
+
 ## Dependencies
 Relies on python-paramiko, the rest should be standard python libs. Only written for Python2, as I cannot be bothered retooling my stuff for Python3 :P
 
