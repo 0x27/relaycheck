@@ -52,10 +52,10 @@ Licenced under the [WTFPL][wtfpl], the only truly free licence so do whatever th
 If you want, send beermoniez to [13rZ67tmhi7M3nQ3w87uoNSHUUFmYx7f4V][bitcoin:13rZ67tmhi7M3nQ3w87uoNSHUUFmYx7f4V]
 
 ## Screenshots
-Here we have a screenshot of the version checker.
+Here we have a screenshot of the version checker.  
 ![Version Check](https://raw.githubusercontent.com/0x27/relaycheck/master/screenshots/screenshot-versioncheck-20150326.png)
 
-Here we have a screenshot of the status checker.
+Here we have a screenshot of the status checker.  
 ![Status Check](https://raw.githubusercontent.com/0x27/relaycheck/master/screenshots/screenshot-statuscheck-20150326.png)
 
 ## Bugs
