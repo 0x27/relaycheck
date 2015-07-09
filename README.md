@@ -49,7 +49,7 @@ Check out the Asciicast demo!
 Licenced under the [WTFPL][wtfpl], the only truly free licence so do whatever the fuck you like ;)
 
 ## Beer?  
-If you want, send beermoniez to [13rZ67tmhi7M3nQ3w87uoNSHUUFmYx7f4V][bitcoin:13rZ67tmhi7M3nQ3w87uoNSHUUFmYx7f4V]
+If you want, send beermoniez to [13rZ67tmhi7M3nQ3w87uoNSHUUFmYx7f4V](bitcoin:13rZ67tmhi7M3nQ3w87uoNSHUUFmYx7f4V)
 
 ## Screenshots
 Here we have a screenshot of the version checker.  
@@ -77,7 +77,7 @@ Relies on python-paramiko, the rest should be standard python libs. Only written
 If for some arbritary reason you want to contact me, see [my contact details and stuff][contact].
 
 ## Changes
-26-03-2015: Added 'start' command to start tor relays if they are down.
+26-03-2015: Added 'start' command to start tor relays if they are down.  
 26-03-2015: Added 'version' command to check tor versions that are running.
 
 [jsonlinter]: http://jsonformatter.curiousconcept.com/
