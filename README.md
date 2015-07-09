@@ -42,7 +42,8 @@ Host, Port, and User are so SSH can access them. Fairly simples, eh? Its valid J
 here][jsonlinter].
 
 ## Demo  
-Check out the [Elite As Fuck AsciiCast Demo!][asciinema]
+Check out the Asciicast demo!  
+[![asciicast](https://asciinema.org/a/17999.png)](https://asciinema.org/a/17999)
 
 ## Licence  
 Licenced under the [WTFPL][wtfpl], the only truly free licence so do whatever the fuck you like ;)
