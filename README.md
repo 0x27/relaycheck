@@ -16,6 +16,12 @@ process in order to restart it, then checks the process list to ensure tor is st
 tor software on the relay, and "start" which starts the tor software if it has died. I have to make this more efficient later, but for some 
 reason restarting with "service tor restart" didn't like being scripted.
 
+## Commands
+* status - returns if the relay in question is online or offline
+* restart - restarts a relays tor instance (kill -HUP)
+* start - starts a tor relay on an instance (service tor start)
+* version - returns the version of Tor running on the host
+
 ## JSON Configuration File  
 The JSON configuration file is incredibly simple. "example.json" included is an example one to use. The format is outlined below.  
 
@@ -79,6 +85,13 @@ If for some arbritary reason you want to contact me, see [my contact details and
 ## Changes
 26-03-2015: Added 'start' command to start tor relays if they are down.  
 26-03-2015: Added 'version' command to check tor versions that are running.
+
+## Todo
+* Python3 support/fork (oh god oh god)
+* Port to Ansible
+* Add deployment commands and the like
+* ?????
+* profit?
 
 [jsonlinter]: http://jsonformatter.curiousconcept.com/
 [asciinema]: https://asciinema.org/a/17999
